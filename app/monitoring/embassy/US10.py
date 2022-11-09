@@ -9,7 +9,7 @@ from common.custom_logger import logger
 from monitoring.embassy.site_url import url_dict
 from monitoring.model import Content, ContentTable
 
-category = 'RU00'
+category = 'US10'
 
 
 def monitoring():
