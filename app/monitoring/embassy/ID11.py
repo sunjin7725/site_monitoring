@@ -6,6 +6,7 @@ from config import EC_WAIT
 from common.crawling_driver import create_chrome_driver
 from common.utils import chrome_close, date_change
 from monitoring.embassy.site_url import url_dict
+from common.custom_logger import logger
 from monitoring.model import Content, ContentTable
 
 category = 'ID11'
@@ -33,6 +34,7 @@ def monitoring():
 
     chrome_close(driver)
     content_table.to_sql()
+    logger.info(f"[{category}]::INSERTED POSTGRESQL")
 
 
 if __name__ == '__main__':

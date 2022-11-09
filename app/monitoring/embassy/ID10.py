@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from config import EC_WAIT
 from common.crawling_driver import create_chrome_driver
 from common.utils import chrome_close, date_change
+from common.custom_logger import logger
 from monitoring.embassy.site_url import url_dict
 from monitoring.model import Content, ContentTable
 
@@ -33,6 +34,7 @@ def monitoring():
 
     chrome_close(driver)
     content_table.to_sql()
+    logger.info(f"[{category}]::INSERTED POSTGRESQL")
 
 
 if __name__ == '__main__':
